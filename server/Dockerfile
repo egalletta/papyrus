@@ -1,4 +1,4 @@
-FROM egalletta/latest
+FROM egalletta/papyrus-common
 COPY ./package.json /app/server/
 COPY ./tsconfig.json /app/server/
 WORKDIR /app/server/
