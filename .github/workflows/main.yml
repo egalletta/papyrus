@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./common
-          file: Dockerfile
+          file: ./common/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
           tags: egalletta/papyrus-common:latest
@@ -37,7 +37,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./scraper
-          file: Dockerfile
+          file: ./scraper/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
           tags: egalletta/papyrus-scraper:latest
@@ -46,7 +46,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./server
-          file: Dockerfile
+          file: ./server/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
           tags: egalletta/papyrus-server:latest
