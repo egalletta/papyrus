@@ -2,20 +2,13 @@ version: "3.3"
 
 services:
   papyrus-server:
-    image: egalletta/papyrus-server:1.0.0-development
+    image: egalletta/papyrus-server:latest
     restart: always
-    networks:
-      - public
-      - db
     ports:
       - "80:80"
   papyrus-scraper:
-    image: egalletta/papyrus-scraper:1.0.0-development
+    image: egalletta/papyrus-scraper:latest
     restart: always
-    networks:
-        - db
   mongo:
     image: mongo:latest
-    networks:
-      - db
 

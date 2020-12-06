@@ -6,7 +6,7 @@
   "dependencies": {
     "eslint": "^7.14.0",
     "mongoose": "^5.11.3",
-    "puppeteer-core": "^5.5.0",
+    "puppeteer": "^5.5.0",
     "tslib": "^2.0.3"
   },
   "devDependencies": {
