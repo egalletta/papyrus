@@ -62,7 +62,7 @@ const getStoriesFromPage = async (page: puppeteer.Page, pageNumber: number) => {
           if (err) {
             console.log(err);
           } else {
-            if (count != 0) {
+            if (count <= 0) {
               story.save((err: any) => {
                 if (err) {
                   console.log(err);
@@ -71,7 +71,13 @@ const getStoriesFromPage = async (page: puppeteer.Page, pageNumber: number) => {
                 }
               });
             } else {
-              console.log("Skipped duplicate story: " + story.title);
+              console.log(
+                "Skipped duplicate story: " +
+                  story.title +
+                  ", there were " +
+                  count +
+                  "instances of this story already"
+              );
             }
           }
         }
