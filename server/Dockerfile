@@ -1,8 +1,8 @@
-FROM egalletta/papyrus-common:1.0.0-devel
+FROM egalletta/latest
 COPY ./package.json /app/server/
 COPY ./tsconfig.json /app/server/
 WORKDIR /app/server/
 RUN npm install
 COPY ./src/ /app/server/src/
-EXPOSE 5000
+EXPOSE 80
 CMD [ "npm", "run", "prod" ]
