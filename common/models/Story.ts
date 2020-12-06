@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const uri: string = "mongodb://papyrus_mongo:27017/test";
+const uri: string = "mongodb://mongo:27017/papyrus";
 
 mongoose.connect(
   uri,
