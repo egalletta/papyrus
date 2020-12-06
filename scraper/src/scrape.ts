@@ -84,7 +84,10 @@ const getStoriesFromPage = async (page: puppeteer.Page, pageNumber: number) => {
 };
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox"],
+  });
   const page = await browser.newPage();
   for (let i = 1; i <= 13; i++) {
     await getStoriesFromPage(page, i);
