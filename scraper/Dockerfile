@@ -33,6 +33,7 @@ RUN npm i puppeteer \
     && chown -R pptruser:pptruser /app
 COPY ./package*.json /app/scraper/
 COPY ./tsconfig.json /app/scraper/
+RUN chmod -R 777 /app/scraper 
 WORKDIR /app/scraper/
 RUN npm --verbose install
 # Run everything after as non-privileged user.
