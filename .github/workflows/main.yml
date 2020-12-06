@@ -5,7 +5,7 @@ on:
     branches: master
 
 jobs:
-  path-context:
+  docker-build-push:
     runs-on: ubuntu-latest
     steps:
       -
@@ -27,26 +27,26 @@ jobs:
         name: Build and push base image
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./common
           file: ./common/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: egalletta/papyrus-common:latest
       -
         name: Build and push scraper image
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./scraper
           file: ./scraper/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: egalletta/papyrus-scraper:latest
       -
         name: Build and push webengine image
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./server
           file: ./server/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: egalletta/papyrus-server:latest
