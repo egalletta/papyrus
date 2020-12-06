@@ -8,7 +8,7 @@ import {
 } from "./models/Story";
 
 const app = express();
-const PORT = 5000;
+const PORT = 80;
 
 app.use((req, res, next) => {
   console.log(Date.now() + ": " + req.headers);
