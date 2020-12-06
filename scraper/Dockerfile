@@ -31,12 +31,11 @@ RUN npm i puppeteer \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /node_modules \
     && chown -R pptruser:pptruser /app
-
-# Run everything after as non-privileged user.
-USER pptruser
 COPY ./package*.json /app/scraper/
 COPY ./tsconfig.json /app/scraper/
 WORKDIR /app/scraper/
 RUN npm --verbose install
+# Run everything after as non-privileged user.
+USER pptruser
 COPY ./src/ /app/scraper/src/
 CMD [ "npm", "run", "prod" ]
