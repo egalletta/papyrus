@@ -49,7 +49,7 @@ def main():
 
 
 def get_story() -> Dict:
-    story = requests.post(URL + "/print", headers={"key": KEY})
+    story = requests.post(URL + "/print", headers={"key": KEY}, verify=False)
     if story.status_code == 200:
         return story.json()
     else:
