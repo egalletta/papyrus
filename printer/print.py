@@ -2,7 +2,7 @@ from time import sleep
 from typing import Dict
 import pyqrcode
 import png
-from PIL import Image
+# from PIL import Image
 from thermalprinter import *
 from bs4 import BeautifulSoup
 import requests
@@ -21,8 +21,8 @@ def main():
         story = get_story()
         if story:
             print("Story Found.")
-            url = pyqrcode.create(story['link'])
-            url.png("story.png", scale=5)
+            # url = pyqrcode.create(story['link'])
+            # url.png("story.png", scale=5)
             with ThermalPrinter(port='/dev/serial0') as printer:
                 printer.out(story['title'], justify='C', size='M', bold=True)
                 print(story['title'])
