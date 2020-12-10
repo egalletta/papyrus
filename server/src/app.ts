@@ -10,6 +10,12 @@ import {
 const app = express();
 const PORT = 80;
 
+//used to check state of scraper
+app.get("/count", (req, res) => {
+  const count = Story.count({});
+  res.send(count);
+});
+
 app.use((req, res, next) => {
   console.log(Date.now() + ": " + req.headers);
   if (req.headers.key === undefined) {
